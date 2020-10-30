@@ -21,10 +21,20 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
+        
+        if($text=='กินข้าวกับอะไร'){
+            $a =  'กับน้ำพริกสิจ๊ะ' 
+        }       
+        else{
+            $a = 'ถามฉันสิ';
+        }
+            
+            
+            
         $data = [
             'replyToken' => $reply_token,
             // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
-            'messages' => [['type' => 'text', 'text' => $text ]]
+            'messages' => [['type' => 'text', 'text' => $a ]]
         ];
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
